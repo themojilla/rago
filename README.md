@@ -1,6 +1,5 @@
 # relative-from-now
-A utility helper to calculate the timeAgo or formNow in a readable format using Intl API
-
+A utility helper to calculate "time ago" or "from now "  in a readable format using Intl API
 
 ```javascript
 

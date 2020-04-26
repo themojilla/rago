@@ -1,5 +1,6 @@
 // Order does matter
 const units = [
+  ['second', 1],
   ['minute', 60],
   ['hour', 60 * 60],
   ['day', 24 * 60 * 60],
@@ -41,10 +42,14 @@ export default function fromNow(date, lang = 'en') {
 
   if (!(date instanceof Date)) {
     from = new Date(date);
+
+    if (isNaN(from.getTime())) {
+      return '';
+    }
   }
 
-  const rtf1 = new Intl.RelativeTimeFormat(lang, { style: 'long' });
+  const rtf = new Intl.RelativeTimeFormat(lang, { style: 'long' });
   const { delta, unit } = diffUnitFor(from);
 
-  return rtf1.format(delta, unit);
+  return rtf.format(delta, unit);
 }

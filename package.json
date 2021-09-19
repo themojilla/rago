@@ -17,6 +17,7 @@
   "unpkg": "dist/rago.iife.js",
   "jsdelivr": "dist/rago.iife.js",
   "module": "./dist/rago.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/rago.es.js",

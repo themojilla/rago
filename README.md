@@ -2,7 +2,7 @@
 
 A utility helper to calculate "time ago" or "from now " in a readable format using Intl API
 
-> Warning: rago tend to use Intl API internally. It made for modern browsers, but if your wan't to keep things also working for older ones, make sure to polyfill the Intl API
+> Warning: the `rago` tend to use Intl API internally. It is made for modern browsers, but if you want to keep things also working for older ones, make sure to polyfill the Intl API
 
 ## Installation
 

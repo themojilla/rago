@@ -1,0 +1,43 @@
+{
+  "name": "rago",
+  "version": "0.0.0",
+  "author": "themojilla <the.mojilla@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/themojilla/rago"
+  },
+  "repository": "https://github.com/themojilla/rago",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "prepare": "husky install",
+    "release": "release-it"
+  },
+  "main": "dist/rago.umd.js",
+  "unpkg": "dist/rago.iife.js",
+  "jsdelivr": "dist/rago.iife.js",
+  "module": "./dist/rago.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/rago.es.js",
+      "require": "./dist/rago.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@release-it/conventional-changelog": "^3.3.0",
+    "@types/node": "^16.9.1",
+    "husky": "^7.0.2",
+    "release-it": "*",
+    "typescript": "^4.3.2",
+    "vite": "^2.5.4"
+  },
+  "keywords": [
+    "fromNow",
+    "relative-time"
+  ]
+}

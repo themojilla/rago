@@ -1,5 +1,4 @@
-// Order does matter
-const units = [
+const units: [Intl.RelativeTimeFormatUnit, number][] = [
   ['second', 1],
   ['minute', 60],
   ['hour', 60 * 60],
@@ -8,8 +7,11 @@ const units = [
   ['year', 12 * 30 * 24 * 60 * 60],
 ];
 
-export function diffUnitFor(from) {
-  const delta = Math.round((from - Date.now()) / 1000); // Rounded delta in seconds
+export function diffUnitFor(from: Date): {
+  unit: Intl.RelativeTimeFormatUnit;
+  delta: number;
+} {
+  const delta = Math.round((from.valueOf() - Date.now()) / 1000); // Rounded delta in seconds
 
   for (let i = 1; i < units.length; i += 1) {
     if (Math.abs(delta) < units[i][1]) {
@@ -22,7 +24,7 @@ export function diffUnitFor(from) {
 
   return {
     delta: Math.round(delta / (12 * 30 * 24 * 60 * 60)),
-    unit: 'year'
+    unit: 'year',
   };
 }
 
@@ -33,7 +35,7 @@ export function diffUnitFor(from) {
  * @param {String} lang
  * @returns {String}
  */
-export default function fromNow(date, lang = 'en') {
+export default function fromNow(date: Date | string, lang = 'en'): string {
   let from = date;
 
   if (!date) {
@@ -48,8 +50,12 @@ export default function fromNow(date, lang = 'en') {
     }
   }
 
-  const rtf = new Intl.RelativeTimeFormat(lang, { style: 'long', numeric: 'auto' });
-  const { delta, unit } = diffUnitFor(from);
+  const rtf1 = new Intl.RelativeTimeFormat(lang, {
+    style: 'long',
+    numeric: 'auto',
+  });
 
-  return rtf.format(delta, unit);
+  const { delta, unit } = diffUnitFor(from as Date);
+
+  return rtf1.format(delta, unit);
 }

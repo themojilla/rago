@@ -1,6 +1,6 @@
 # rago
 
-A utility helper to calculate "time ago" or "from now " in a readable format using Intl API
+A utility helper to calculate "time ago" or "from now " in a readable format using Intl API. [![npm version](https://badge.fury.io/js/rago.svg)](https://badge.fury.io/js/rago)
 
 > Warning: the `rago` tend to use Intl API internally. It is made for modern browsers, but if you want to keep things also working for older ones, make sure to polyfill the Intl API
 

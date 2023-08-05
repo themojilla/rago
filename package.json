@@ -35,7 +35,7 @@
     "husky": "^7.0.2",
     "release-it": "*",
     "typescript": "^4.3.2",
-    "vite": "^2.5.4"
+    "vite": "^2.9.16"
   },
   "keywords": [
     "fromNow",
